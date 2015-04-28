@@ -1,0 +1,45 @@
+-------------
+-- clacman --
+-------------
+
+* Required softwares *
+
+  You will need :
+
+  - ASDF : http://www.cliki.net/asdf
+  - PAL : http://common-lisp.net/project/pal
+
+* ASDF *
+
+  In /usr/share/common-lisp/systems, create a symbolic link
+  to the system definition file (clacman.asd)
+  or
+  add the ernestine directory to *central-directory* of ASDF :
+  (push "/directory/clacman/" asdf:*central-registry*)
+
+* Load *
+ 
+  In the Lisp system :
+  (asdf:operate 'asdf:load-op 'clacman)
+
+* Launch game *
+
+ CL-USER> (clacman:clacman)
+
+
+
+* SBCL --script option
+
+For people who have SBCL (>= 1.0.21), it's possible to launch the game
+using  the bin/clacman.lisp  executable. Just  edit  the *clacman-dir*
+and *username* parameters and :
+
+ $> bin/clacman.lisp
+
+
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[  ^L]*$"
+end:
