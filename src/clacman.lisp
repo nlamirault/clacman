@@ -7,7 +7,7 @@
 ;;;; Purpose:       A Pacman game.
 ;;;; Programmer:    Nicolas Lamirault <nicolas.lamirault@gmail.com>
 ;;;;
-;;;; This file, part of clacman, is Copyright (c) 2007 by Nicolas Lamirault
+;;;; This file, part of clacman, is Copyright (c) 2007, 2015 by Nicolas Lamirault
 ;;;;
 ;;;; clacman users are granted the rights to distribute and use this software
 ;;;; as governed by the terms of the Lisp Lesser GNU Public License
@@ -83,7 +83,7 @@ POSITION is a cons of coordonates (x . y)."
                           (pal:v (+ x 18) y)
                           (pal:v (+ x 18) (+ y 18))
                           (pal:v x (+ y 18)))
-                    r g b                                  
+                    r g b
                     255))
 
 
@@ -169,7 +169,7 @@ POSITION is a cons of coordonates (x . y)."
 
 
 (defmethod draw-game ((game game) level points &optional username)
-  (pal:clear-screen 0 0 0)
+  (pal:clear-screen (pal:color 0 0 0))
   (with-slots (matrix phantoms pacman) game
     (loop ;;for y from 0 to 15 ;;29
        for y below +matrix-height+
@@ -278,18 +278,18 @@ POSITION is a cons of coordonates (x . y)."
       (with-slots (matrix phantoms pacman) game
         (pal:event-loop ()
           (case state
-            
+
             (:ready
-             (pal:test-keys            
+             (pal:test-keys
                ;;(:key-a (display-about))
                (:key-s (setf state :playing))
                (:key-q (return-from pal:event-loop))))
-          
+
             (:paused
              (pal:test-keys
                (:key-p (setf state :playing))
                (:key-q (return-from pal:event-loop))))
-          
+
             (:playing
              (pal:test-keys
                (:key-p (setf state :paused))
@@ -350,5 +350,5 @@ POSITION is a cons of coordonates (x . y)."
                unless (or (null (first pos))
                           (null (second pos)))
                do (move ghost matrix (first pos) (second pos))))
-            
+
           (draw-game game level points username))))))
