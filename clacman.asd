@@ -24,7 +24,7 @@
   :name "clacman"
   :author "Nicolas Lamirault <nicolas.lamirault@gmail.com>"
   :maintainer "Nicolas Lamirault <nicolas.lamirault@gmail.com>"
-  :version "0.1.O"
+  :version "0.2.O"
   :licence "Lisp Lesser GNU General Public License"
   :description "A pacman game."
   :depends-on (:pal)
