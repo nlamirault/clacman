@@ -1,3 +1,14 @@
-Clacman ChangeLog
-=================
+# Clacman ChangeLog
 
+## Version 0.2.0 (04/29/2015)
+
+* Refactoring
+* ``FIX`` Build project
+
+## Version 0.1.0 (09/10/2007)
+
+* Implements ghosts, pacman, and the matrix.
+* Add the first level.
+* Implements gesture of the pacman and movements
+* Check collision between game area and ghosts.
+* Start project using PAL.
