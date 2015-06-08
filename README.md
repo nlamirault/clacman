@@ -26,10 +26,6 @@ In a lisp REPL :
 
     CL-USER> (clacman)
 
-or from shell:
-
-    $ ./clacman.sh
-
 
 ## Commands
 
