@@ -4,12 +4,12 @@
 
 * Setup TravisCI 
 
-## Version 0.2.0 (04/29/2015)
+## Version 0.1.0 (04/29/2015)
 
 * Refactoring
 * ``FIX`` Build project
 
-## Version 0.1.0 (09/10/2007)
+## Version 0.0.0 (09/10/2007)
 
 * Implements ghosts, pacman, and the matrix.
 * Add the first level.
