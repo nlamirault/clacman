@@ -1,5 +1,9 @@
 # Clacman ChangeLog
 
+## Version 0.3.0 (06/08/2015)
+
+* Setup TravisCI 
+
 ## Version 0.2.0 (04/29/2015)
 
 * Refactoring
