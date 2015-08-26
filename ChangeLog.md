@@ -1,5 +1,9 @@
 # Clacman ChangeLog
 
+## Version 0.4.0 (08/26/2015)
+
+- Build executable
+
 ## Version 0.3.0 (08/26/2015)
 
 - Init unit tests
