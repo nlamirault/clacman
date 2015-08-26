@@ -28,9 +28,30 @@ OK_COLOR=\033[32;01m
 ERROR_COLOR=\033[31;01m
 WARN_COLOR=\033[33;01m
 
+ROSWELL_HOME=$(HOME)/.roswell
+ROSWELL_BRANCH = master
+
+
 all: help
 
 help:
 	@echo -e "$(OK_COLOR)==== $(APP) [$(VERSION)] ====$(NO_COLOR)"
-	@echo -e "$(WARN_COLOR)- release$(NO_COLOR)      : make a new release$(NO_COLOR)"
-	@echo -e "$(WARN_COLOR)- clean$(NO_COLOR)        : clean Scame installation$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- init$(NO_COLOR)  : install tools$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- deps$(NO_COLOR)  : install dependencies$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- test$(NO_COLOR)  : launch unit tests$(NO_COLOR)"
+
+.PHONY: init
+init:
+	@echo -e "$(OK_COLOR)[clacman] Install dependencies$(NO_COLOR)"
+	@curl -L https://raw.githubusercontent.com/snmsts/roswell/$(ROSWELL_BRANCH)/scripts/install-for-ci.sh | sh
+	@ros install qlot
+
+.PHONY: deps
+deps:
+	@qlot install :clacman
+	@ln -sf `pwd`/*.asd  quicklisp/local-projects/
+
+.PHONY: test
+test:
+	@echo -e "$(OK_COLOR)[clacman] Launch unit tests$(NO_COLOR)"
+	@qlot exec run-prove clacman-test.asd

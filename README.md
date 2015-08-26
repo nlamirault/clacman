@@ -3,18 +3,22 @@ Clacman
 
 [![Build Status](http://img.shields.io/travis/nlamirault/clacman.svg)](https://travis-ci.org/nlamirault/clacman)
 
+[![Quicklisp](http://quickdocs.org/badge/clacman.svg)](http://quickdocs.org/clacman/)
+
 This is the classic [Pacman](http://en.wikipedia.org/wiki/Pacman) game in Common Lisp.
 
 ## Required softwares
 
 You will need :
 
-* [SBCL](http://www.sbcl.org)
-* [Quicklisp](http://www.quicklisp.org)
+* [SBCL][]
+* [Quicklisp][]
 
 and dependencies :
 
     $ sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev
+
+See [roswell][] to setup the Common Lisp environment.
 
 ## Installation
 
@@ -42,6 +46,22 @@ Available commands :
 * q : Quit clacman
 
 
+## Development
+
+* Install [roswell][] to setup the Common Lisp environment and install your Common Lisp implementation using it.:
+
+        $ make init
+        $ ros install sbcl
+
+* Install dependencies :
+
+        $ make deps
+
+* Launch unit tests :
+
+        $ make test
+
+
 ## Changelog
 
 A changelog is available [here](ChangeLog.md).
@@ -50,3 +70,9 @@ A changelog is available [here](ChangeLog.md).
 ## Contact
 
 Nicolas Lamirault <nicolas.lamirault@gmail.com>
+
+
+
+[sbcl]: http://www.sbcl.org
+[quicklisp]: http://www.quicklisp.org
+[roswell]: https://github.com/snmsts/roswell

@@ -3,8 +3,8 @@
 ;;;; *************************************************************************
 ;;;; FILE IDENTIFICATION
 ;;;;
-;;;; Name:          specials.lisp
-;;;; Purpose:       Some specials variables of the Clacman game
+;;;; Name:          clacman-test.asd
+;;;; Purpose:       ASDF definition for Clacman unit tests
 ;;;; Programmer:    Nicolas Lamirault <nicolas.lamirault@gmail.com>
 ;;;;
 ;;;; This file, part of clacman, is Copyright (c) 2007, 2015 by Nicolas Lamirault
@@ -16,13 +16,19 @@
 ;;;; *************************************************************************
 
 
-(in-package :clacman)
+(in-package :cl-user)
+(defpackage clacman-test-asd
+  (:use :cl :asdf))
+(in-package :clacman-test-asd)
 
-
-(defmacro define-constant (name value &optional doc)
-  "Macro which defines constant if NAME is unbound."
-  `(defconstant ,name
-     (if (boundp ',name)
-         (symbol-value ',name)
-         ,value)
-    ,@(when doc (list doc))))
+(defsystem clacman-test
+  :defsystem-depends-on (:prove-asdf)
+  :depends-on (:clacman
+               :prove)
+  :components ((:module "t"
+                :components
+                ((:file "package")
+                 (:test-file "clacman" :depends-on ("package")))))
+  :perform (test-op :after (op c)
+                    (funcall (intern #.(string :run-test-system) :prove) c)
+                    (asdf:clear-system c)))

@@ -3,8 +3,8 @@
 ;;;; *************************************************************************
 ;;;; FILE IDENTIFICATION
 ;;;;
-;;;; Name:          specials.lisp
-;;;; Purpose:       Some specials variables of the Clacman game
+;;;; Name:          package.lisp
+;;;; Purpose:       Package file for Clacman unit tests
 ;;;; Programmer:    Nicolas Lamirault <nicolas.lamirault@gmail.com>
 ;;;;
 ;;;; This file, part of clacman, is Copyright (c) 2007, 2015 by Nicolas Lamirault
@@ -16,13 +16,7 @@
 ;;;; *************************************************************************
 
 
-(in-package :clacman)
-
-
-(defmacro define-constant (name value &optional doc)
-  "Macro which defines constant if NAME is unbound."
-  `(defconstant ,name
-     (if (boundp ',name)
-         (symbol-value ',name)
-         ,value)
-    ,@(when doc (list doc))))
+(defpackage :clacman-test
+  (:use :cl :clacman :prove)
+  (:documentation "Clacman unit tests package.")
+  )
