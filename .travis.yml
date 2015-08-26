@@ -26,6 +26,7 @@ install:
   # Install Roswell
   - curl -L https://raw.githubusercontent.com/snmsts/roswell/$ROSWELL_BRANCH/scripts/install-for-ci.sh | sh
   - ros -e '(ql:update-all-dists :prompt nil)'
+  - ros install qlot
   - ros install prove
 
 cache:
@@ -39,4 +40,6 @@ before_script:
 
 script:
     # - cl -e '(ql:quickload :clacman)'
-    - ros -s prove -e '(or (prove:run :clacman-test) (uiop:quit -1))'
+    - qlot install :clacman
+    - cd quicklisp/local-projects/ && ln -s ../../*.asd . && cd ../../
+    - qlot exec run-prove clacman-test.asd
