@@ -15,17 +15,32 @@
 ;;;;
 ;;;; *************************************************************************
 
-(in-package :cl-user)
-(defpackage clacman-test.clacman
-  (:use :cl
-        :prove
-        :clacman))
-(in-package :clacman-test.clacman)
+
+(in-package :clacman-test)
 
 
-(plan 0)
+(plan 12)
 
 
+(multiple-value-bind (matrix pacman-pos balls-pos ghosts-pos)
+    (clacman::load-level "0")
+  (declare (ignore balls-pos))
+  ;; game
+  (is 16 (array-dimension matrix 0))
+  (is 21 (array-dimension matrix 1))
+  ;; pacman position
+  (is 9 (car pacman-pos))
+  (is 10 (cdr pacman-pos))
+  ;; ghosts positions
+  (is 10 (car (first ghosts-pos)))
+  (is 5 (cdr (first ghosts-pos)))
+  (is 9 (car (second ghosts-pos)))
+  (is 5 (cdr (second ghosts-pos)))
+  (is 8 (car (third ghosts-pos)))
+  (is 5 (cdr (third ghosts-pos)))
+  (is 7 (car (fourth ghosts-pos)))
+  (is 5 (cdr (fourth ghosts-pos)))
+  )
 
 
 (finalize)
