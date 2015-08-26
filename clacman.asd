@@ -21,7 +21,7 @@
 (in-package :clacman-asd)
 
 (defsystem clacman
-  :version "0.3.0"
+  :version "0.4.0"
   :author "Nicolas Lamirault <nicolas.lamirault@gmail.com>"
   :license "Lisp Lesser GNU General Public License"
   :depends-on (:pal)
