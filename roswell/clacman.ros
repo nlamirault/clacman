@@ -4,8 +4,9 @@
 exec ros -Q -- $0 "$@"
 |#
 
+(push *default-pathname-defaults* asdf:*central-registry*)
 (ql:quickload :clacman :slient t)
 
 (defun main (&rest argv)
   (declare (ignorable argv))
-  (clacman))
+  (clacman:clacman))

@@ -36,9 +36,10 @@ all: help
 
 help:
 	@echo -e "$(OK_COLOR)==== $(APP) [$(VERSION)] ====$(NO_COLOR)"
-	@echo -e "$(WARN_COLOR)- init$(NO_COLOR)  : install tools$(NO_COLOR)"
-	@echo -e "$(WARN_COLOR)- deps$(NO_COLOR)  : install dependencies$(NO_COLOR)"
-	@echo -e "$(WARN_COLOR)- test$(NO_COLOR)  : launch unit tests$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- init$(NO_COLOR)   : install tools$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- deps$(NO_COLOR)   : install dependencies$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- test$(NO_COLOR)   : launch unit tests$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- binary$(NO_COLOR) : build executable$(NO_COLOR)"
 
 .PHONY: init
 init:
@@ -55,3 +56,8 @@ deps:
 test:
 	@echo -e "$(OK_COLOR)[clacman] Launch unit tests$(NO_COLOR)"
 	@qlot exec run-prove clacman-test.asd
+
+.PHONY: binary
+binary:
+	@echo -e "$(OK_COLOR)[clacman] Build binary$(NO_COLOR)"
+	@ros build roswell/clacman.ros
