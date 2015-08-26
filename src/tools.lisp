@@ -7,7 +7,7 @@
 ;;;; Purpose:       Some specials variables of the Clacman game
 ;;;; Programmer:    Nicolas Lamirault <nicolas.lamirault@gmail.com>
 ;;;;
-;;;; This file, part of clacman, is Copyright (c) 2007 by Nicolas Lamirault
+;;;; This file, part of clacman, is Copyright (c) 2007, 2015 by Nicolas Lamirault
 ;;;;
 ;;;; clacman users are granted the rights to distribute and use this software
 ;;;; as governed by the terms of the Lisp Lesser GNU Public License
@@ -26,5 +26,3 @@
          (symbol-value ',name)
          ,value)
     ,@(when doc (list doc))))
-
-
