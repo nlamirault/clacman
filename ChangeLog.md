@@ -1,8 +1,13 @@
 # Clacman ChangeLog
 
+## Version 0.3.0 (08/26/2015)
+
+- Init unit tests
+- Update build chain
+
 ## Version 0.2.0 (06/08/2015)
 
-* Setup TravisCI 
+* Setup TravisCI
 
 ## Version 0.1.0 (04/29/2015)
 
