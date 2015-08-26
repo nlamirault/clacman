@@ -28,6 +28,7 @@ OK_COLOR=\033[32;01m
 ERROR_COLOR=\033[31;01m
 WARN_COLOR=\033[33;01m
 
+ROSWELL_HOME=$(HOME)/.roswell
 ROSWELL_BRANCH = master
 
 
@@ -37,6 +38,7 @@ help:
 	@echo -e "$(OK_COLOR)==== $(APP) [$(VERSION)] ====$(NO_COLOR)"
 	@echo -e "$(WARN_COLOR)- init$(NO_COLOR)  : install tools$(NO_COLOR)"
 	@echo -e "$(WARN_COLOR)- deps$(NO_COLOR)  : install dependencies$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- test$(NO_COLOR)  : launch unit tests$(NO_COLOR)"
 
 .PHONY: init
 init:
@@ -46,13 +48,10 @@ init:
 
 .PHONY: deps
 deps:
-	@qlot install clacman
-
-.PHONY: lisp
-lisp:
-	@echo -e "$(OK_COLOR)[clacman] Display Lisp implementation$(NO_COLOR)"
-	@ros list installed
+	@qlot install :clacman
+	cd quicklisp/local-projects/ && ln -s ../../*.asd . && cd ../../
 
 .PHONY: test
 test:
 	@echo -e "$(OK_COLOR)[clacman] Launch unit tests$(NO_COLOR)"
+	@qlot exec run-prove clacman-test.asd

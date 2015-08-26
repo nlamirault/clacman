@@ -46,6 +46,22 @@ Available commands :
 * q : Quit clacman
 
 
+## Development
+
+* Install [roswell][] to setup the Common Lisp environment and install your Common Lisp implementation using it.:
+
+        $ make init
+        $ ros install sbcl
+
+* Install dependencies :
+
+        $ make deps
+
+* Launch unit tests :
+
+        $ make test
+
+
 ## Changelog
 
 A changelog is available [here](ChangeLog.md).
