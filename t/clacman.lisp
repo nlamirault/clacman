@@ -23,7 +23,7 @@
 (in-package :clacman-test.clacman)
 
 
-(plan 1)
+(plan 0)
 
 
 

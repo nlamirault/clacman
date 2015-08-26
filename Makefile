@@ -49,7 +49,7 @@ init:
 .PHONY: deps
 deps:
 	@qlot install :clacman
-	cd quicklisp/local-projects/ && ln -s ../../*.asd . && cd ../../
+	@ln -sf `pwd`/*.asd  quicklisp/local-projects/
 
 .PHONY: test
 test:
