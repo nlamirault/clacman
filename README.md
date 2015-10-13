@@ -1,8 +1,9 @@
 Clacman
 =======
 
-
 [![License MIT][badge-license]][LICENSE]
+[![GitHub version](https://badge.fury.io/gh/nlamirault%2Fclacman.svg)](https://badge.fury.io/gh/nlamirault%2Fclacman)
+
 
 Master :
 * [![Circle CI](https://circleci.com/gh/nlamirault/clacman/tree/master.svg?style=svg)](https://circleci.com/gh/nlamirault/clacman/tree/master)
