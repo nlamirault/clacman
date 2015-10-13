@@ -1,9 +1,14 @@
 Clacman
 =======
 
-[![Build Status](http://img.shields.io/travis/nlamirault/clacman.svg)](https://travis-ci.org/nlamirault/clacman)
 
-[![Quicklisp](http://quickdocs.org/badge/clacman.svg)](http://quickdocs.org/clacman/)
+[![License MIT][badge-license]][LICENSE]
+
+Master :
+* [![Circle CI](https://circleci.com/gh/nlamirault/clacman/tree/master.svg?style=svg)](https://circleci.com/gh/nlamirault/clacman/tree/master)
+
+Develop:
+* [![Circle CI](https://circleci.com/gh/nlamirault/clacman/tree/develop.svg?style=svg)](https://circleci.com/gh/nlamirault/clacman/tree/develop)
 
 This is the classic [Pacman](http://en.wikipedia.org/wiki/Pacman) game in Common Lisp.
 
@@ -18,17 +23,20 @@ and dependencies :
 
     $ sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev
 
-See [roswell][] to setup the Common Lisp environment.
-
 ## Installation
 
-    CL-USER> (ql:quickload "clacman")
+* Install tools and dependencies :
 
-## Launch game
+        $ make init
+        $ make deps
 
-In a lisp REPL :
+* Make binary :
 
-    CL-USER> (clacman)
+        $ make binary
+
+* Launch game :
+
+        $ roswell/clacman
 
 
 ## Commands
@@ -61,10 +69,19 @@ Available commands :
 
         $ make test
 
+## Support / Contribute
+
+See [here](CONTRIBUTING.md)
+
 
 ## Changelog
 
 A changelog is available [here](ChangeLog.md).
+
+
+## License
+
+See [LICENSE](LICENSE).
 
 
 ## Contact
@@ -76,3 +93,9 @@ Nicolas Lamirault <nicolas.lamirault@gmail.com>
 [sbcl]: http://www.sbcl.org
 [quicklisp]: http://www.quicklisp.org
 [roswell]: https://github.com/snmsts/roswell
+
+[clacman]: https://github.com/nlamirault/clacman
+[badge-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat
+[LICENSE]: https://github.com/nlamirault/clacman/blob/master/LICENSE
+
+[Issue tracker]: https://github.com/nlamirault/clacman/issues

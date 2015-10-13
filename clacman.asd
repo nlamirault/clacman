@@ -10,8 +10,8 @@
 ;;;; This file, part of clacman, is Copyright (c) 2007, 2015 by Nicolas Lamirault
 ;;;;
 ;;;; clacman users are granted the rights to distribute and use this software
-;;;; as governed by the terms of the Lisp Lesser GNU Public License
-;;;; (http://opensource.franz.com/preamble.html), also known as the LLGPL.
+;;;; as governed by the terms of the MIT License :
+;;;; http://www.opensource.org/licenses/mit-license.php
 ;;;;
 ;;;; *************************************************************************
 
@@ -23,7 +23,7 @@
 (defsystem clacman
   :version "0.5.0"
   :author "Nicolas Lamirault <nicolas.lamirault@gmail.com>"
-  :license "Lisp Lesser GNU General Public License"
+  :license "MIT License"
   :depends-on (:pal)
   :components ((:module "src"
                 :components
